@@ -44,7 +44,7 @@ done
 ```
 
 ✅ Answer
-```
+```bash
 #!/bin/bash
 
 # Variable to encode
