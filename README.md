@@ -99,7 +99,7 @@ Terminal:
 > 
 > #Permission denied
 > 
-> $ chmod +x exercise.sh         (#chmod (grant permissions) +x (to execute) exercise.sh (bash))
+> $ chmod +x exercise.sh         (#chmod (grant permissions) +x (to execute) exercise.sh (name))
 > 
 > $ ./exercise.sh                (#run/execute)
 > 
