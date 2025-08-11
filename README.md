@@ -23,7 +23,7 @@ It covers everything from the fundamental concepts of the language to script exe
 
 ---
 
-## 🧩 Exercise
+### 🧩 Exercise
 
 **Task:**  
 Create an `if-else` condition in the `for` loop of the **Exercise Script** that prints the number of characters of the 35th generated value of the variable `var`. Submit the number as the answer.
