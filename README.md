@@ -66,9 +66,7 @@ Output: 684824
 
 - Arguments, Variables, and Arrays
 
----
-
-## 🧩 Exercise
+🧩 Exercise
 
 **Task:**  
 Create an `if-else` condition in the `for` loop that checks if the variable named `var` contains the contents of the variable named `value`.  
@@ -150,6 +148,139 @@ Final answer: 2paTlJYTkxDZz09Cg==
 ### 3. Script Control
 - Input and Output Control
 - Flow Controls - Loops
+
+  🧩 Exercise
+
+**Task:**  
+Create a `For` loop that encodes the variable `var` 28 times in `base64`. The number of characters in the 28th hash is the value that must be assigned to the `salt` variable.
+
+
+**Exercise Script (starter code):**
+```bash
+#!/bin/bash
+
+# Decrypt function
+function decrypt {
+	MzSaas7k=$(echo $hash | sed 's/988sn1/83unasa/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/4d298d/9999/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/3i8dqos82/873h4d/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/4n9Ls/20X/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/912oijs01/i7gg/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/k32jx0aa/n391s/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/nI72n/YzF1/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/82ns71n/2d49/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/JGcms1a/zIm12/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/MS9/4SIs/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/Ymxj00Ims/Uso18/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/sSi8Lm/Mit/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/9su2n/43n92ka/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/ggf3iunds/dn3i8/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/uBz/TT0K/g')
+
+	flag=$(echo $MzSaas7k | base64 -d | openssl enc -aes-128-cbc -a -d -salt -pass pass:$salt)
+}
+
+# Variables
+var="9M"
+salt=""
+hash="VTJGc2RHVmtYMTl2ZnYyNTdUeERVRnBtQWVGNmFWWVUySG1wTXNmRi9rQT0K"
+
+# Base64 Encoding Example:
+#        $ echo "Some Text" | base64
+
+# <- For-Loop here
+
+# Check if $salt is empty
+if [[ ! -z "$salt" ]]
+then
+	decrypt
+	echo $flag
+else
+	exit 1
+fi
+```
+✅ Answer
+
+Terminal: 
+> $ nano decode.sh
+> 
+> $ ./decode.sh                (#try running the "exercise.sh")
+> 
+> #Permission denied
+> 
+> $ chmod +x decode.sh         (#chmod (grant permissions) +x (to execute) exercise.sh (name))
+> 
+> $ ./decode.sh                (#run/execute)
+> 
+> *** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+HTBL00p5r0x
+
+
+
+```bash
+#!/bin/bash
+# The line above (shebang) specifies that the script should be executed with the Bash interpreter.
+
+# Defines the decryption function that will be called later.
+function decrypt {
+    # The following chain of 'sed' commands modifies the input hash. This is a form of obfuscation
+    # that alters the hash string before it's passed to OpenSSL.
+	MzSaas7k=$(echo $hash | sed 's/988sn1/83unasa/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/4d298d/9999/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/3i8dqos82/873h4d/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/4n9Ls/20X/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/912oijs01/i7gg/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/k32jx0aa/n391s/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/nI72n/YzF1/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/82ns71n/2d49/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/JGcms1a/zIm12/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/MS9/4SIs/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/Ymxj00Ims/Uso18/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/sSi8Lm/Mit/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/9su2n/43n92ka/g')
+	Mzns7293sk=$(echo $MzSaas7k | sed 's/ggf3iunds/dn3i8/g')
+	MzSaas7k=$(echo $Mzns7293sk | sed 's/uBz/TT0K/g')
+
+    # Finally, it attempts to decrypt the modified hash using AES-128-CBC.
+    # The password for decryption is composed of the string 'pass:' followed by the calculated $salt.
+	flag=$(echo $MzSaas7k | base64 -d | openssl enc -aes-128-cbc -a -d -salt -pass pass:$salt)
+}
+
+# Variable declaration and initialization.
+var="9M"
+salt=""
+hash="VTJGc2RHVmtYMTl2ZnYyNTdUeERVRnBtQWVGNmFWWVUySG1wTXNmRi9rQT0K"
+
+# Starts a loop that will execute 28 times.
+for i in {1..28}
+do
+    # In each iteration, the content of 'var' is Base64 encoded.
+    # Crucially, 'echo' without '-n' adds a newline character ('\n') to the output,
+    # which gets included in the Base64 encoding at every step. This behavior is key to the solution.
+	var=$(echo $var | base64)
+done # End of the loop.
+
+# After the loop, the salt is calculated.
+# 'echo $var | wc -c' counts all characters in the final hash PLUS the trailing newline from 'echo'.
+# This results in a salt value of (length of var + 1).
+salt=$(echo $var | wc -c)
+
+# Beginning of the final conditional check.
+# It verifies if the 'salt' variable is not empty ('! -z').
+if [[ ! -z "$salt" ]]
+then
+    # If 'salt' has a value, the decrypt function is called.
+	decrypt
+    # The resulting flag from the decryption is printed to the screen.
+	echo $flag
+else
+    # If, for some reason, 'salt' is empty, the script exits with an error status code.
+	exit 1
+fi # End of the conditional structure.
+```
+Final answer: HTBL00p5r0x
+
 - Flow Control - Branches
 
 ### 4. Execution Flow
