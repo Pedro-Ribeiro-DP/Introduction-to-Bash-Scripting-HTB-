@@ -95,13 +95,13 @@ done
 Terminal: 
 > $ nano exercise.sh
 > 
-> $ ./exercise.sh                #try running the "exercise.sh"
+> $ ./exercise.sh                (#try running the "exercise.sh")
 > 
 > #Permission denied
 > 
-> $ chmod +x exercise.sh         #chmod (grant permissions) +x (to execute) exercise.sh (bash)
+> $ chmod +x exercise.sh         (#chmod (grant permissions) +x (to execute) exercise.sh (bash))
 > 
-> $ ./exercise.sh                #run/execute
+> $ ./exercise.sh                (#run/execute)
 > 
 > U2paTlJYTkxDZz09Cg==
 
